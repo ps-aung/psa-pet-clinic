@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.6.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>psa.springframework</groupId>
 	<artifactId>psa-pet-clinic</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.5</version>
     
 	<packaging>pom</packaging>
 	
@@ -33,14 +32,20 @@
                 <configuration>
                     <goals>install</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <checkModificationExcludes>
+     					<checkModificationExclude>pet-clinic-data/pom.xml</checkModificationExclude>
+      					<checkModificationExclude>pet-clinic-web/pom.xml</checkModificationExclude>
+      					<checkModificationExclude>pom.xml</checkModificationExclude>
+      					<checkModificationExclude>.DS-Store</checkModificationExclude>
+   					</checkModificationExcludes>
                 </configuration>
             </plugin>
 		</plugins>
 	</build>
 
 	<scm>
-        <developerConnection>scm:git:git@github.com:springframeworkguru/sfg-pet-clinic.git</developerConnection>
-      	<tag>HEAD</tag>
+        <developerConnection>scm:git:git@github.com:ps-aung/psa-pet-clinic.git</developerConnection>
+      	<tag>0.0.1</tag>
   	</scm>
 	<modules>
 		<module>pet-clinic-data</module>
