@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by pyaesoneaung on 20/04/2020
  *
  */
-@RequestMapping("/vets")
+@RequestMapping("/owners")
 @Controller
-public class VetController {
+public class OwnerController {
 	
 	@RequestMapping({"","/","/index","/index.html"})
-	public String listVets() {
-		return "vets/index";
+	public String listOwners() {
+		return "owners/index";
 	}
 
 }
