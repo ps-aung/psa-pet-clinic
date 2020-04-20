@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>psa.springframework</groupId>
 	<artifactId>psa-pet-clinic</artifactId>
-	<version>0.0.5-SNAPSHOT</version>
+	<version>0.0.5</version>
     
 	<packaging>pom</packaging>
 	
