@@ -5,14 +5,17 @@ package psa.springframework.psapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import psa.springframework.psapetclinic.model.Owner;
-import psa.springframework.psapetclinic.services.CrudServices;
+import psa.springframework.psapetclinic.services.OwnerService;
 
 /**
  * Created by pyaesoneaung on 20/04/2020
  *
  */
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudServices<Owner, Long> {
+@Service
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     
 	@Override
@@ -40,5 +43,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     public void deleteById(Long id) {
         super.deleteById(id);
     }
+
+	@Override
+	public Owner findByLastName(String lastname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

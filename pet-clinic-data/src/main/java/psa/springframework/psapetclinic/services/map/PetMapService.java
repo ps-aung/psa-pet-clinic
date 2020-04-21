@@ -5,14 +5,17 @@ package psa.springframework.psapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import psa.springframework.psapetclinic.model.Pet;
-import psa.springframework.psapetclinic.services.CrudServices;
+import psa.springframework.psapetclinic.services.PetService;
 
 /**
  * Created by pyaesoneaung on 20/04/2020
  *
  */
-public class PetMapService extends AbstractMapService<Pet, Long> implements CrudServices<Pet, Long> {
+@Service
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
 
 
 	@Override

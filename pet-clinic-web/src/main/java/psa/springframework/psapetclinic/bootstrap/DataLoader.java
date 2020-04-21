@@ -3,6 +3,7 @@
  */
 package psa.springframework.psapetclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -10,8 +11,6 @@ import psa.springframework.psapetclinic.model.Owner;
 import psa.springframework.psapetclinic.model.Vet;
 import psa.springframework.psapetclinic.services.OwnerService;
 import psa.springframework.psapetclinic.services.VetService;
-import psa.springframework.psapetclinic.services.map.OwnerMapService;
-import psa.springframework.psapetclinic.services.map.VetMapService;
 
 /**
  * Created by pyaesoneaung on 21/04/2020
@@ -23,15 +22,16 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	
-	
+
+
 	/**
 	 * @param ownerService
+	 * @param vetService
 	 */
-	public DataLoader() {
+	public DataLoader(OwnerService ownerService, VetService vetService) {
 		super();
-		ownerService = new OwnerMapService();
-		vetService = new VetMapService();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 
