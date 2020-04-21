@@ -3,7 +3,6 @@
  */
 package psa.springframework.psapetclinic.bootstrap;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -41,14 +40,12 @@ public class DataLoader implements CommandLineRunner {
 		// TODO Auto-generated method stub
 		
 		Owner owner1 = new Owner();
-		owner1.setId(1L);
 		owner1.setFirstName("Pyae Sone");
 		owner1.setLastName("Aung");
 		
 		ownerService.save(owner1);
 		
 		Owner owner2 = new Owner();
-		owner2.setId(2L);
 		owner2.setFirstName("Thet Hnin");
 		owner2.setLastName("Swe");
 		
@@ -57,14 +54,12 @@ public class DataLoader implements CommandLineRunner {
 		System.out.println("loaded owners........");
 		
 		Vet vet1 = new Vet();
-		vet1.setId(1L);
 		vet1.setFirstName("Vet1");
 		vet1.setLastName("Doctor");
 		
 		vetService.save(vet1);
 		
 		Vet vet2 = new Vet();
-		vet2.setId(2L);
 		vet2.setFirstName("Vet2");
 		vet2.setLastName("Doctor");
 		
