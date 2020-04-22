@@ -13,7 +13,7 @@ import psa.springframework.psapetclinic.services.VetService;
  * Created by pyaesoneaung on 20/04/2020
  *
  */
-@RequestMapping("/vets")
+
 @Controller
 public class VetController {
 	
@@ -29,7 +29,7 @@ public class VetController {
 
 
 
-	@RequestMapping({"","/","/index","/index.html"})
+	@RequestMapping({"/vets","/vets/","/vets/index","/vets/index.html","/vets.html"})
 	public String listVets(Model model) {
 		
 		model.addAttribute("vets", vetService.findall());
