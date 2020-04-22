@@ -9,20 +9,20 @@ package psa.springframework.psapetclinic.model;
  */
 public class Specialty extends BaseEntity  {
 	
-	private String descriptionString;
+	private String description;
 
 	/**
 	 * @return the descriptionString
 	 */
-	public String getDescriptionString() {
-		return descriptionString;
+	public String getDescription() {
+		return description;
 	}
 
 	/**
 	 * @param descriptionString the descriptionString to set
 	 */
-	public void setDescriptionString(String descriptionString) {
-		this.descriptionString = descriptionString;
+	public void setDescription(String descriptionString) {
+		this.description = descriptionString;
 	}
 	
 
