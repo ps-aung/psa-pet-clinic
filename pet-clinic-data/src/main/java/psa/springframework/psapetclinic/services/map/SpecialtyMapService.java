@@ -5,9 +5,10 @@ package psa.springframework.psapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import psa.springframework.psapetclinic.model.Specialty;
+import psa.springframework.psapetclinic.model.Speciality;
 import psa.springframework.psapetclinic.services.SpecialtiesService;
 
 /**
@@ -15,28 +16,29 @@ import psa.springframework.psapetclinic.services.SpecialtiesService;
  *
  */
 @Service
-public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+@Profile({"default","map"})
+public class SpecialtyMapService extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
 
 	@Override
-	public Set<Specialty> findall() {
+	public Set<Speciality> findall() {
 		// TODO Auto-generated method stub
 		return super.findall();
 	}
 
 	@Override
-	public Specialty findById(Long id) {
+	public Speciality findById(Long id) {
 		// TODO Auto-generated method stub
 		return super.findById(id);
 	}
 
 	@Override
-	public Specialty save(Specialty object) {
+	public Speciality save(Speciality object) {
 		// TODO Auto-generated method stub
 		return super.save(object);
 	}
 
 	@Override
-	public void delete(Specialty object) {
+	public void delete(Speciality object) {
 		// TODO Auto-generated method stub
 		super.delete(object);
 	}

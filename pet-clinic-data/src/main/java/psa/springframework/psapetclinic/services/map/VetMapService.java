@@ -5,9 +5,10 @@ package psa.springframework.psapetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import psa.springframework.psapetclinic.model.Specialty;
+import psa.springframework.psapetclinic.model.Speciality;
 import psa.springframework.psapetclinic.model.Vet;
 import psa.springframework.psapetclinic.services.VetService;
 
@@ -16,6 +17,7 @@ import psa.springframework.psapetclinic.services.VetService;
  *
  */
 @Service
+@Profile({"default","map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
 	private final SpecialtyMapService specialMapService;
@@ -45,7 +47,7 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
     	if(object.getSpecialties().size() > 0) {
     		object.getSpecialties().forEach(specialty->{
     			if(specialty.getId() == null) {
-    				Specialty savedSpecialty = specialMapService.save(specialty);
+    				Speciality savedSpecialty = specialMapService.save(specialty);
     				specialty.setId(savedSpecialty.getId());
     			}
     		});

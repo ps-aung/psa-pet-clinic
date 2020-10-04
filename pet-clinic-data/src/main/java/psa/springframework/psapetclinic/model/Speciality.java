@@ -3,12 +3,19 @@
  */
 package psa.springframework.psapetclinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by pyaesoneaung on 22/04/2020
  *
  */
-public class Specialty extends BaseEntity  {
+@Entity
+@Table(name = "specialities")
+public class Speciality extends BaseEntity  {
 	
+	@Column(name = "description")
 	private String description;
 
 	/**
