@@ -14,10 +14,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * Created by pyaesoneaung on 14/04/2020
  *
  */
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity {
@@ -38,67 +49,5 @@ public class Pet extends BaseEntity {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
 	private Set<Visit> vists = new HashSet<>();
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-	/**
-	 * @return the petType
-	 */
-	public PetType getPetType() {
-		return petType;
-	}
-	/**
-	 * @param petType the petType to set
-	 */
-	public void setPetType(PetType petType) {
-		this.petType = petType;
-	}
-	/**
-	 * @return the owner
-	 */
-	public Owner getOwner() {
-		return owner;
-	}
-	/**
-	 * @param owner the owner to set
-	 */
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
-	/**
-	 * @return the birthDate
-	 */
-	public LocalDate getBirthDate() {
-		return birthDate;
-	}
-	/**
-	 * @param birthDate the birthDate to set
-	 */
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
-	}
-	/**
-	 * @return the vists
-	 */
-	public Set<Visit> getVists() {
-		return vists;
-	}
-	/**
-	 * @param vists the vists to set
-	 */
-	public void setVists(Set<Visit> vists) {
-		this.vists = vists;
-	}
 	
-	
-
 }

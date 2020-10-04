@@ -9,17 +9,35 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Created by pyaesoneaung on 14/04/2020
  *
  */
+@Setter
+@Getter
+@NoArgsConstructor
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
+	
+	@Builder
+	public Owner(Long id,String firstName,String lastName,String address,String city,String telephone,Set<Pet> pets) {
+		super(id,firstName,lastName);
+		this.address = address;
+		this.city = city;
+		this.telephone = telephone;
+		this.pets = pets;
+		
+	}
 	
 	@Column(name = "address")
 	private String address;
@@ -32,63 +50,5 @@ public class Owner extends Person {
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
 	private Set<Pet> pets = new HashSet<Pet>();
-
-	/**
-	 * @return the address
-	 */
-	public String getAddress() {
-		return address;
-	}
-
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	/**
-	 * @return the city
-	 */
-	public String getCity() {
-		return city;
-	}
-
-	/**
-	 * @param city the city to set
-	 */
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	/**
-	 * @return the telephone
-	 */
-	public String getTelephone() {
-		return telephone;
-	}
-
-	/**
-	 * @param telephone the telephone to set
-	 */
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
-	/**
-	 * @return the pets
-	 */
-	public Set<Pet> getPets() {
-		return pets;
-	}
-
-	/**
-	 * @param pets the pets to set
-	 */
-	public void setPets(Set<Pet> pets) {
-		this.pets = pets;
-	}
-	
-	
 
 }
