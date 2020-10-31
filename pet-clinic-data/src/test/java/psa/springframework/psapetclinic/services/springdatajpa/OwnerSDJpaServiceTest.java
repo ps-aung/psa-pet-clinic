@@ -35,12 +35,12 @@ class OwnerSDJpaServiceTest {
     Owner returnOwner;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws Exception {
         returnOwner = Owner.builder().id(1l).lastName(LAST_NAME).build();
     }
 
     @Test
-    void findByLastName() {
+    void findByLastName() throws Exception {
         when(ownerRepository.findByLastName(any())).thenReturn(returnOwner);
 
         Owner aung = service.findByLastName(LAST_NAME);
@@ -51,7 +51,7 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void findAll() {
+    void findAll() throws Exception {
         Set<Owner> returnOwnersSet = new HashSet<>();
         returnOwnersSet.add(Owner.builder().id(1l).build());
         returnOwnersSet.add(Owner.builder().id(2l).build());
@@ -65,7 +65,7 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void findById() {
+    void findById() throws Exception {
         when(ownerRepository.findById(anyLong())).thenReturn(Optional.of(returnOwner));
 
         Owner owner = service.findById(1L);
@@ -74,7 +74,7 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void findByIdNotFound() {
+    void findByIdNotFound() throws Exception {
         when(ownerRepository.findById(anyLong())).thenReturn(Optional.empty());
 
         Owner owner = service.findById(1L);
@@ -84,7 +84,7 @@ class OwnerSDJpaServiceTest {
 
 
     @Test
-    void save() {
+    void save() throws Exception {
         Owner ownerToSave = Owner.builder().id(1L).build();
 
         when(ownerRepository.save(any())).thenReturn(returnOwner);
@@ -97,7 +97,7 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void delete() {
+    void delete() throws Exception {
         service.delete(returnOwner);
 
         //default is 1 times
@@ -105,7 +105,7 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void deleteById() {
+    void deleteById() throws Exception {
         service.deleteById(1L);
 
         verify(ownerRepository).deleteById(anyLong());

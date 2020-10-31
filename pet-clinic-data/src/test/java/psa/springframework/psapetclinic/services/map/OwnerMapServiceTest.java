@@ -15,25 +15,25 @@ class OwnerMapServiceTest {
     final String lastName = "Aung";
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws Exception {
         ownerMapService = new OwnerMapService(new PetMapService(),new PetTypeMapService());
         ownerMapService.save(Owner.builder().id(ownerId).lastName(lastName).build());
     }
 
     @Test
-    void findall() {
+    void findall() throws Exception {
         Set<Owner> owners =  ownerMapService.findall();
         assertEquals(1,owners.size());
     }
 
     @Test
-    void findById() {
+    void findById() throws Exception {
         Owner owner = ownerMapService.findById(ownerId);
         assertEquals(ownerId,owner.getId());
     }
 
     @Test
-    void saveExistingId() {
+    void saveExistingId() throws Exception {
         Long id = 2L;
         Owner owner2 = Owner.builder().id(id).build();
         Owner owner = ownerMapService.save(owner2);
@@ -41,33 +41,33 @@ class OwnerMapServiceTest {
     }
 
     @Test
-    void saveNoId(){
+    void saveNoId() throws Exception {
         Owner savedOwner = ownerMapService.save(Owner.builder().build());
         assertNotNull(savedOwner);
         assertNotNull(savedOwner.getId());
     }
 
     @Test
-    void delete() {
+    void delete() throws Exception {
         ownerMapService.delete(ownerMapService.findById(ownerId));
         assertEquals(0,ownerMapService.findall().size());
     }
 
     @Test
-    void deleteById() {
+    void deleteById() throws Exception {
         ownerMapService.deleteById(ownerId);
         assertEquals(0,ownerMapService.findall().size());
     }
 
     @Test
-    void findByLastName() {
+    void findByLastName() throws Exception {
         Owner aung = ownerMapService.findByLastName(lastName);
         assertNotNull(aung);
         assertEquals(lastName,aung.getLastName());
     }
 
     @Test
-    void findByLastNameNotFound() {
+    void findByLastNameNotFound() throws Exception {
         Owner swe = ownerMapService.findByLastName("swe");
         assertNull(swe);
     }
