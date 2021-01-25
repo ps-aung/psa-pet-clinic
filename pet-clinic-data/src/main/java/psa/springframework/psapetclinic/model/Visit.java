@@ -31,7 +31,7 @@ import lombok.Setter;
 public class Visit extends BaseEntity {
 	
 	@Column(name = "date")
-	private LocalDate localDate;
+	private LocalDate date;
 	
 	@Column(name = "description")
 	private String description;
