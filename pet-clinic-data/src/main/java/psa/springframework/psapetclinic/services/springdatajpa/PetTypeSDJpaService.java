@@ -14,7 +14,7 @@ import psa.springframework.psapetclinic.services.PetTypeService;
 @Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
 
-	private PetTypeRepository petTypeRepository;
+	private final PetTypeRepository petTypeRepository;
 	
 	public PetTypeSDJpaService(PetTypeRepository petTypeRepository) {
 		// TODO Auto-generated constructor stub
