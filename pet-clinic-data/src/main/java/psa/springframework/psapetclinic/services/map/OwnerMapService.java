@@ -99,7 +99,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     @Override
     public List<Owner> findAllByLastNameLike(String lastName) {
         // TODO - impl
-        return null;
+        return this.findAllByLastNameLike(lastName);
     }
 
 }
