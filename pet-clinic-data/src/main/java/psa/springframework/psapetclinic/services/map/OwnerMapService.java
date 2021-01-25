@@ -3,6 +3,7 @@
  */
 package psa.springframework.psapetclinic.services.map;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -27,7 +28,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     /**
      * @param petservice
-     * @param petTypeMapService
+     * @param petTypeService
      */
     public OwnerMapService(PetService petservice, PetTypeService petTypeService) {
         super();
@@ -93,6 +94,12 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                 .filter(owner -> owner.getLastName().equalsIgnoreCase(lastname))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        // TODO - impl
+        return null;
     }
 
 }
