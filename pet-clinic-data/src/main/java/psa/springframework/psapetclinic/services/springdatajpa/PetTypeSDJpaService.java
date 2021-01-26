@@ -21,7 +21,7 @@ public class PetTypeSDJpaService implements PetTypeService {
 		this.petTypeRepository = petTypeRepository;
 	}
 	@Override
-	public Set<PetType> findall() {
+	public Set<PetType> findAll() {
 		// TODO Auto-generated method stub
 		Set<PetType> pettypes = new HashSet<>();
 		petTypeRepository.findAll().forEach(pettypes::add);

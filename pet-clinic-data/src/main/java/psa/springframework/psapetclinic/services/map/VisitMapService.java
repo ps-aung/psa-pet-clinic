@@ -13,7 +13,7 @@ import psa.springframework.psapetclinic.services.VisitService;
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService{
 
 	@Override
-	public Set<Visit> findall() {
+	public Set<Visit> findAll() {
 		// TODO Auto-generated method stub
 		return super.findall();
 	}

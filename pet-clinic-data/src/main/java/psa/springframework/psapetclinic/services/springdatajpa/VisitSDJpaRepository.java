@@ -22,7 +22,7 @@ public class VisitSDJpaRepository implements VisitService  {
 	}
 
 	@Override
-	public Set<Visit> findall() {
+	public Set<Visit> findAll() {
 		// TODO Auto-generated method stub
 		Set<Visit> visits = new HashSet<>();
 		visitRepository.findAll().forEach(visits::add);

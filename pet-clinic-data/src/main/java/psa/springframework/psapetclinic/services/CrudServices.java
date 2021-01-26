@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public interface CrudServices<T,ID> {
 	
-	Set<T> findall();
+	Set<T> findAll();
 	
 	T findById(ID id);
 	

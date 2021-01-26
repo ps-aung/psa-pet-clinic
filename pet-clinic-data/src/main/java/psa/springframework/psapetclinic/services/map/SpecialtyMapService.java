@@ -20,7 +20,7 @@ import psa.springframework.psapetclinic.services.SpecialtiesService;
 public class SpecialtyMapService extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
 
 	@Override
-	public Set<Speciality> findall() {
+	public Set<Speciality> findAll() {
 		// TODO Auto-generated method stub
 		return super.findall();
 	}

@@ -37,7 +37,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Set<Owner> findall() {
+    public Set<Owner> findAll() {
         return super.findall();
     }
 
@@ -89,7 +89,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner findByLastName(String lastname) {
         // TODO Auto-generated method stub
-        return this.findall()
+        return this.findAll()
                 .stream()
                 .filter(owner -> owner.getLastName().equalsIgnoreCase(lastname))
                 .findFirst()

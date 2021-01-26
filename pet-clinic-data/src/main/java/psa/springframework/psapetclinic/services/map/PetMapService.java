@@ -21,7 +21,7 @@ public class PetMapService extends AbstractMapService<Pet, Long> implements PetS
 
 
 	@Override
-    public Set<Pet> findall() {
+    public Set<Pet> findAll() {
         return super.findall();
     }
 

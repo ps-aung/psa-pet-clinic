@@ -21,7 +21,7 @@ public class SpecialitySDJpaService implements SpecialtiesService {
 		this.specialityRepository = specialityRepository;
 	}
 	@Override
-	public Set<Speciality> findall() {
+	public Set<Speciality> findAll() {
 		// TODO Auto-generated method stub
 		Set<Speciality> specialities = new HashSet<>();
 		specialityRepository.findAll().forEach(specialities::add);

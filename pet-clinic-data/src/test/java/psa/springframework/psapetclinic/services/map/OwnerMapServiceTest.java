@@ -22,7 +22,7 @@ class OwnerMapServiceTest {
 
     @Test
     void findall() throws Exception {
-        Set<Owner> owners =  ownerMapService.findall();
+        Set<Owner> owners =  ownerMapService.findAll();
         assertEquals(1,owners.size());
     }
 
@@ -50,13 +50,13 @@ class OwnerMapServiceTest {
     @Test
     void delete() throws Exception {
         ownerMapService.delete(ownerMapService.findById(ownerId));
-        assertEquals(0,ownerMapService.findall().size());
+        assertEquals(0,ownerMapService.findAll().size());
     }
 
     @Test
     void deleteById() throws Exception {
         ownerMapService.deleteById(ownerId);
-        assertEquals(0,ownerMapService.findall().size());
+        assertEquals(0,ownerMapService.findAll().size());
     }
 
     @Test
