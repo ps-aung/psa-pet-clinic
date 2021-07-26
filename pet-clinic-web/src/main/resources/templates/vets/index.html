@@ -9,17 +9,17 @@
 	<table class="table table-striped">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>FirstName</th>
-            <th>LastName</th>
+            <th>Name</th>
+            <th>Specialties</th>
         </tr>
         </thead>
         <tbody>
-          <tr th:each="vet : ${vets}">
-              <td th:text="${vet.id}"/>
-              <td th:text="${vet.firstName}"/>
-              <td th:text="${vet.lastName}"/>
-          </tr>
+        <tr th:each="vet : ${vets}">
+            <td th:text="${vet.firstName + ' ' + vet.lastName}"></td>
+            <td><span th:each="specialty : ${vet.specialties}"
+                      th:text="${specialty.description + ' '}" /> <span
+                    th:if="${vet?.specialties?.size() == 0}">none</span></td>
+        </tr>
         </tbody>
     </table>
 </body>
